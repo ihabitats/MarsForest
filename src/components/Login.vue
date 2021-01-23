@@ -17,6 +17,7 @@
           <el-input
             v-model="loginForm.phone"
             suffix-icon="el-icon-mobile-phone"
+            placeholder="请输入手机号"
           ></el-input>
         </el-form-item>
         <el-form-item prop="password">
@@ -24,6 +25,7 @@
             type="password"
             v-model="loginForm.password"
             suffix-icon="el-icon-more"
+            placeholder="请输入密码"
           ></el-input>
         </el-form-item>
         <el-form-item class="btns">

@@ -21,6 +21,11 @@ Vue.config.productionTip = false
 //配置请求的根路径
 // axios.defaults.baseURL = 'https://www.fastmock.site/mock/26435024ab33e0f4374c1f13944a8064/in/login'
 // Vue.prototype.$http.post = axios
+
+axios.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
