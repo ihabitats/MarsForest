@@ -38,8 +38,12 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude:/(node_modules|bower_components|webpack-dev-server|client)/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test')],
+        options:{
+          presets:['es2015']
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -67,7 +71,17 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: "style-loader!css-loader!less-loader"
+        loader: [
+          {
+            loader:'style-loader'
+          },
+          {
+            loader:'css-loader'
+          },
+          {
+            loader:'less-loader'
+          }
+        ]
       }
     ]
   },

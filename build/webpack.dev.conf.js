@@ -64,7 +64,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new webpack.BannerPlugin('最终版权归墨染所有')
   ]
 })
 
